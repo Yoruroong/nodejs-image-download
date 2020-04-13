@@ -23,5 +23,6 @@ rl.on("line",(data)=>{
 
     download(data, 'image.png', function(){
         console.log('done');
+        process.exit()
     });
 });
