@@ -22,7 +22,7 @@ rl.on("line",(data)=>{
     };
 
     download(data, 'image.png', function(){
-        console.log('done');
+        console.log('Done');
         process.exit()
     });
 });
