@@ -5,7 +5,7 @@ const rl=readline.createInterface({
   output:process.stdout
 });
  
-rl.setPrompt("다운할 이미지 URL(CTRL+C : STOP)");
+rl.setPrompt("다운할 이미지 URL(CTRL+C => STOP)");
  
 rl.prompt();
 rl.on("line",(data)=>{
