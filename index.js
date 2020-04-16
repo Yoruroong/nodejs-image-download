@@ -12,7 +12,7 @@ rl.setPrompt("다운할 이미지 URL (Press CTRL+C to STOP)");
 rl.prompt();
 
 rl.on("line", data => {
-    let download = (uri, filename, callback) => {
+    let download = (uri, callback) => {
         return request.head(uri, (err, res, body) => {
             if(err) {
                 console.error(err.stack || err)
@@ -21,11 +21,11 @@ rl.on("line", data => {
             console.log('Content-Type:', res.headers['content-type']);
             console.log('Content-Length:', res.headers['content-length']);
 
-            return request(uri).pipe(createWriteStream(filename)).on('close', callback);
+            return request(uri).pipe(createWriteStream(new Date() * 1 + "." + res.headers['content-type'].split("/")[1].replace("; charset=utf-8", ""))).on('close', callback);
         });
     };
 
-    download(data, 'image.png', () => {
+    download(data, () => {
         console.log('Done');
         process.exit()
     });
