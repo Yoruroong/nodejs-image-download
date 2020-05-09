@@ -8,7 +8,7 @@ const rl=readline.createInterface({
 });
  
 rl.setPrompt("다운할 파일 URL (Press CTRL+C to STOP)");
- 
+
 rl.prompt();
 
 rl.on("line", data => {
