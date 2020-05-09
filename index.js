@@ -6,7 +6,7 @@ const rl=readline.createInterface({
   input:process.stdin,
   output:process.stdout
 });
- 
+
 rl.setPrompt("다운할 파일 URL (Press CTRL+C to STOP)");
 
 rl.prompt();
